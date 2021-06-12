@@ -1,0 +1,1 @@
+This is test of Arithmetic Coding. Hope that it will work!!! Well, it works properly.
