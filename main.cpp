@@ -13,10 +13,10 @@ int main(){
 
     char check;
 	cout<<"Encode Phase!"<<endl;
-	
+
 	cout<<"Do you want to Encode?<y/n> ";
 	cin>>check;
-	if(!(check=='Y'||check=='y')) goto DECODE_PHASE;
+	if((check=='Y'||check=='y')){
     cout<<"Encode!"<<endl;
     cout<<"Input your Plaintext file name: ";
     cin>>input;
@@ -29,9 +29,9 @@ int main(){
 
     Arithmetic EncodeObj;
     EncodeObj.Encode(inputFile,outputFile);
-
+    }
+    
     //Decode Phase
-	DECODE_PHASE:
     cout<<"Decode!"<<endl;
     cout<<"Do you want to Decode?<y/n> ";
 	cin>>check;
@@ -39,12 +39,12 @@ int main(){
 
     cout<<"Input your encoded filename: ";
     cin>>input;
-	inputFile = input.c_str();
-    
+	const char* inputFile = input.c_str();
+
 
     cout<<"Input your Destination File name: ";
 	cin>>output;
-    outputFile=output.c_str();
+    const char* outputFile=output.c_str();
 
     Arithmetic DecodeObj;
     DecodeObj.Decode(inputFile,outputFile);
